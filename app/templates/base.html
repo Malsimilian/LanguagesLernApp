@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LanguagesLernApp</title>
+    <!-- Подключаем файл стилей -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Подключаем библиотеку Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Верхняя синяя полоска с кнопками меню и профиля -->
+    <div class="top-bar">
+        <!-- Кнопка меню слева с иконкой Font Awesome -->
+        <button id="togglePanelBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <!-- Кнопка профиля справа с иконкой Font Awesome -->
+        <a href="/profile" class="profile-button"><i class="fas fa-user-circle"></i></a>
+    </div>
+    <div id="panel" class="panel">
+        <button id="closePanelBtn" class="close-btn"><i class="fas fa-bars"></i></button>
+        <p>Содержимое панели...</p>
+        </div>
+    <!-- Основное содержимое страницы будет добавлено в этот блок -->
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+    <script src="{{ url_for('static', filename='js/test.js') }}"></script>
+</body>
+</html>
+
+
+
+

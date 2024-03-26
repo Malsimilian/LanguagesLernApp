@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Выезжающая панель</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<button id="togglePanelBtn">Нажми, чтобы открыть/закрыть панель</button>
+
+<div id="panel" class="panel">
+  <button id="closePanelBtn" class="close-btn">Закрыть панель</button>
+  <p>Содержимое панели...</p>
+</div>
+
+<script src="{{ url_for('static', filename='js/test.js') }}"></script>
+</body>
+</html>

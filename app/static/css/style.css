@@ -1,0 +1,42 @@
+/* Общие стили */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+/* Стили для верхней синей полоски */
+.top-bar {
+    background-color: #2196F3; /* синий цвет, можно изменить */
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Стили для кнопок меню и профиля */
+.menu-button,
+.profile-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+.panel {
+  position: fixed;
+  top: 0;
+  left: -300px; /* Панель изначально сдвинута за пределы экрана */
+  width: 250px;
+  height: 100%;
+  background-color: #f4f4f4;
+  transition: left 0.3s ease; /* Анимация для плавного выезда/въезда */
+  padding: 20px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+}
+
+
