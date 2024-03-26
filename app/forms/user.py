@@ -10,4 +10,6 @@ class RegisterForm(FlaskForm):
     name = StringField('Имя пользователя', validators=[DataRequired()])
     language_choices = [('english', 'English'), ('french', 'French'), ('spanish', 'Spanish')]
     language = SelectField('Choose a language', choices=language_choices)
+    role_choices = [('student', 'Student'), ('teacher', 'Teacher')]
+    role = SelectField('Choose a role', choices=role_choices)
     submit = SubmitField('Зарегистрироваться')

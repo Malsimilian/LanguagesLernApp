@@ -1,19 +1,21 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, redirect
 from flask_login import LoginManager, login_user, logout_user, login_required
-from data.users import User
+
 from data import db_session
+from data.users import User
 from forms.login import LoginForm
 from forms.user import RegisterForm
-
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret_key'
 login_manager = LoginManager()
 login_manager.init_app(app)
 
+
 @app.route('/')
 def index():
-    return render_template('base.html')
+    return render_template('index.html')
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -31,7 +33,8 @@ def register():
         user = User(
             name=form.name.data,
             email=form.email.data,
-            about=form.language.data
+            language=form.language.data,
+            role=form.role.data
         )
         user.set_password(form.password.data)
         db_sess.add(user)
@@ -39,9 +42,11 @@ def register():
         return redirect('/login')
     return render_template('register.html', title='Регистрация', form=form)
 
+
 @app.route('/profile')
 def profile():
     return render_template('profile.html')
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -57,11 +62,13 @@ def login():
                                form=form)
     return render_template('login.html', title='Авторизация', form=form)
 
+
 @app.route('/logout')
 @login_required
 def logout():
     logout_user()
     return redirect("/")
+
 
 @login_manager.user_loader
 def load_user(user_id):
