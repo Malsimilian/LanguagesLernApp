@@ -33,8 +33,7 @@ def register():
         user = User(
             name=form.name.data,
             email=form.email.data,
-            language=form.language.data,
-            role=form.role.data
+            role=form.role.data == 'teacher' or form.role.data == 'Teacher'
         )
         user.set_password(form.password.data)
         db_sess.add(user)

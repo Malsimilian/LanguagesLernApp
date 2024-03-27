@@ -3,6 +3,7 @@ import sqlalchemy
 from .db_session import SqlAlchemyBase
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+from sqlalchemy import orm
 
 
 class User(SqlAlchemyBase, UserMixin):
@@ -11,12 +12,14 @@ class User(SqlAlchemyBase, UserMixin):
     id = sqlalchemy.Column(sqlalchemy.Integer,
                            primary_key=True, autoincrement=True)
     name = sqlalchemy.Column(sqlalchemy.String, nullable=True)
-    languages = sqlalchemy.Column(sqlalchemy.String, nullable=True)
+    # languages = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     email = sqlalchemy.Column(sqlalchemy.String,
                               index=True, unique=True, nullable=True)
     hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     created_date = sqlalchemy.Column(sqlalchemy.DateTime,
                                      default=datetime.datetime.now)
+    is_author = sqlalchemy.Column(sqlalchemy.Boolean)
+    courses = orm.relationship('Courses', backref='user')
 
     def __str__(self):
         return f'{self.id} {self.name} {self.email}'
