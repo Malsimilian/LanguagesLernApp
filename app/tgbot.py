@@ -81,6 +81,7 @@ def handle_help(message):
 /login
 /logout
 /courses
+/favorite_courses
     ''')
 
 
@@ -112,7 +113,7 @@ def handle_lessons(message):
             markup.add(lesson)
         bot.send_message(message.chat.id, "Выберите урок:", reply_markup=markup)
     else:
-        bot.send_message(message.chat.id, 'На данный момент нет доступных уроков.')
+        bot.send_message(message.chat.id, 'В этом курсе еще нет уроков.')
     db_sess.close()
 
 
@@ -171,6 +172,22 @@ def handle_logout(message):
         'Вы успешно вышли из всоего аккаунта'
     else:
         'Вы не вошли в аккаунт'
+
+
+@bot.message_handler(commands=['favorite_courses'])
+def handle_favorite_courses(message):
+    set_status_for_new_user(message)
+    db_sess = db_session.create_session()
+    user = db_sess.query(User).filter(User.tg_chat_id == message.chat.id).first()
+    lessons = user.favorite_courses
+    if lessons:
+        markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
+        for lesson in [lesson.name for lesson in lessons]:
+            markup.add(lesson)
+        bot.send_message(message.chat.id, "Выберите курс:", reply_markup=markup)
+    else:
+        bot.send_message(message.chat.id, 'У вас нет избранных курсов.')
+    db_sess.close()
 
 
 bot.polling()

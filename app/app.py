@@ -144,7 +144,9 @@ def login():
         user = db_sess.query(User).filter(User.email == form.email.data).first()
         if user and user.check_password(form.password.data):
             login_user(user, remember=form.remember_me.data)
+            db_sess.close()
             return redirect("/")
+        db_sess.close()
         return render_template('login.html',
                                message="Неправильный логин или пароль",
                                form=form)
@@ -158,6 +160,8 @@ def add_or_exclude_course_to_favorite(url, course_id):
         current_user.favorite_courses.remove(course)
     else:
         current_user.favorite_courses.append(course)
+    db_sess.commit()
+    db_sess.close()
     return redirect(f'/{url}')
 
 @app.route('/favorite_courses', methods=['GET', 'POST'])

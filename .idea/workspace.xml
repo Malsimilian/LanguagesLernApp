@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="578f2ab7-b109-4551-bd64-0d7883e70b18" name="Changes" comment="добавил страницу с избранными курсами">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/data/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/bs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/bs.db-journal" beforeDir="false" />
+    <list default="true" id="578f2ab7-b109-4551-bd64-0d7883e70b18" name="Changes" comment="добавлена авторизация в тг боте">
       <change beforePath="$PROJECT_DIR$/app/tgbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/tgbot.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +66,7 @@
       <recent name="D:\PycharmProjects\app" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.tgbot">
+  <component name="RunManager" selected="Python.app (1)">
     <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LanguagesLernApp" />
       <option name="ENV_FILES" value="" />
@@ -183,8 +179,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.tgbot" />
         <item itemvalue="Python.app (1)" />
+        <item itemvalue="Python.tgbot" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.users (1)" />
         <item itemvalue="Python.__init__" />
@@ -247,7 +243,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711636376002</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="добавлена авторизация в тг боте">
+      <option name="closed" value="true" />
+      <created>1711643288529</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1711643288529</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -268,6 +272,7 @@
     <MESSAGE value="добавил тг бота&#10;https://t.me/LanguagesLernBotBot&#10;позваляющего читать уроки" />
     <MESSAGE value="добавление курсов в избранное" />
     <MESSAGE value="добавил страницу с избранными курсами" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавил страницу с избранными курсами" />
+    <MESSAGE value="добавлена авторизация в тг боте" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлена авторизация в тг боте" />
   </component>
 </project>
