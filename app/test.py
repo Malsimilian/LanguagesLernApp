@@ -1,14 +1,23 @@
-from flask import Flask, render_template
+import telebot
 
-app = Flask(__name__)
+API_TOKEN = '6636405050:AAGnrf72ZmFEHSqcns9_k94J7wwv9d3FsRw'
 
-@app.route('/')
-def index():
-    return render_template('test.html')
+bot = telebot.TeleBot(API_TOKEN)
 
-@app.route('/base')
-def base():
-    return render_template('base.html')
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=1234)
+# Handle '/start' and '/help'
+@bot.message_handler(commands=['help', 'start'])
+def send_welcome(message):
+    bot.reply_to(message, """\
+Hi there, I am EchoBot.
+I am here to echo your kind words back to you. Just say anything nice and I'll say the exact same thing to you!\
+""")
+
+
+# Handle all other messages with content_type 'text' (content_types defaults to ['text'])
+@bot.message_handler(func=lambda message: True)
+def echo_message(message):
+    bot.reply_to(message, message.text)
+
+
+bot.infinity_polling()
