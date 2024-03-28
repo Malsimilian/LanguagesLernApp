@@ -26,7 +26,7 @@
             <h3> Для студентов</h3>
             <a href="/search_courses" class="btn">Поиск курсов</a>
             {% if current_user.is_authenticated %}
-                <p>Избранные курсы</p>
+                <a href="/favorite_courses" class="btn">Избранные курсы</a>
             {% endif %}
             {% if current_user.is_authenticated %}
                 {% if current_user.is_author %}

@@ -11,9 +11,9 @@
                     <a href="/course/{{ item.id }}" class="btn btn-secondary">{{ item.name }}</a>
                 </h2>
                 {% if item in current_user.favorite_courses %}
-                    <a href="/favorite/{{ item.id }}" class="fas fa-heart"></a>
+                    <a href="/favorite/search_courses/{{ item.id }}" class="fas fa-heart"></a>
                 {% else %}
-                    <a href="/favorite/{{ item.id }}" class="far fa-heart"></a>
+                    <a href="/favorite/search_courses/{{ item.id }}" class="far fa-heart"></a>
                 {% endif %}
             </div>
         </div>

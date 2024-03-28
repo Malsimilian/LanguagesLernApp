@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Избранные курсы</h1>
+<div class="row">
+    {% for item in courses %}
+        {% if item in current_user.favorite_courses %}
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <a href="/course/{{ item.id }}" class="btn btn-secondary">{{ item.name }}</a>
+                        </h2>
+                            <a href="/favorite/favorite_courses/{{ item.id }}" class="fas fa-heart"></a>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}

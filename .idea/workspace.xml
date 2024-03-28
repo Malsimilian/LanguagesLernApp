@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="578f2ab7-b109-4551-bd64-0d7883e70b18" name="Changes" comment="добавил тг бота&#10;https://t.me/LanguagesLernBotBot&#10;позваляющего читать уроки">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="578f2ab7-b109-4551-bd64-0d7883e70b18" name="Changes" comment="добавление курсов в избранное">
+      <change afterPath="$PROJECT_DIR$/app/templates/favorite_courses.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/data/courses.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/courses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/data/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/bs.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/bs.db-journal" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/search_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/search_courses.html" afterDir="false" />
     </list>
@@ -21,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -230,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711632962740</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="добавление курсов в избранное">
+      <option name="closed" value="true" />
+      <created>1711635917890</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1711635917890</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -249,6 +255,7 @@
     <MESSAGE value="создание курсво&#10;создание уроков" />
     <MESSAGE value="все работает" />
     <MESSAGE value="добавил тг бота&#10;https://t.me/LanguagesLernBotBot&#10;позваляющего читать уроки" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавил тг бота&#10;https://t.me/LanguagesLernBotBot&#10;позваляющего читать уроки" />
+    <MESSAGE value="добавление курсов в избранное" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавление курсов в избранное" />
   </component>
 </project>
