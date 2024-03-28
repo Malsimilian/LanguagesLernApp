@@ -23,16 +23,18 @@
     </div>
     <div id="panel" class="panel">
         <button id="closePanelBtn" class="close-btn"><i class="fas fa-bars"></i></button>
-        {% if current_user.is_authenticated %}
             <h3> Для студентов</h3>
-            <p>Поиск курсов</p>
-            <p>Мои курсы</p>
-            {% if current_user.is_author %}
-                <h3> Для авторов</h3>
-                <a href="/my_courses" class="btn">Мои курсы</a>
-                <a href="/create_course" class="btn">Создать курс</a>
+            <a href="/search_courses" class="btn">Поиск курсов</a>
+            {% if current_user.is_authenticated %}
+                <p>Мои курсы</p>
             {% endif %}
-        {% endif %}
+            {% if current_user.is_authenticated %}
+                {% if current_user.is_author %}
+                    <h3> Для авторов</h3>
+                    <a href="/my_courses" class="btn">Мои курсы</a>
+                    <a href="/create_course" class="btn">Создать курс</a>
+                {% endif %}
+            {% endif %}
         </div>
     <!-- Основное содержимое страницы будет добавлено в этот блок -->
     <div class="content">

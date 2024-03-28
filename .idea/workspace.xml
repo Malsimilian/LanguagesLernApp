@@ -4,22 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="578f2ab7-b109-4551-bd64-0d7883e70b18" name="Changes" comment="вход регистрация траляля">
-      <change afterPath="$PROJECT_DIR$/app/forms/course.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/forms/lesson.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/add_lesson.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/create_course.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/my_course.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/my_courses.html" afterDir="false" />
+    <list default="true" id="578f2ab7-b109-4551-bd64-0d7883e70b18" name="Changes" comment="все работает">
+      <change afterPath="$PROJECT_DIR$/app/templates/course.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/lesson.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/my_lesson.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/search_courses.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/data/courses.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/courses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/data/lessons.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/lessons.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/data/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/bs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/forms/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms/user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/my_course.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/my_course.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,11 +224,32 @@
       <option name="project" value="LOCAL" />
       <updated>1711472942060</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="все работает">
+      <option name="closed" value="true" />
+      <created>1711619333703</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711619333703</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="вход регистрация траляля" />
-    <option name="LAST_COMMIT_MESSAGE" value="вход регистрация траляля" />
+    <MESSAGE value="создание курсво&#10;создание уроков" />
+    <MESSAGE value="все работает" />
+    <option name="LAST_COMMIT_MESSAGE" value="все работает" />
   </component>
 </project>

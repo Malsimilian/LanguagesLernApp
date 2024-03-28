@@ -1,17 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="mb-4">{{course.name}}</h1>
-<div class="mb-4">
-    <a href="/add_lesson/{{ course.id }}" class="btn btn-primary">Добавить урок</a>
-</div>
+<h1 class="mb-4">Все курсы</h1>
 <div class="row">
-    {% for item in lessons %}
+    {% for item in courses %}
     <div class="col-md-6 mb-3">
         <div class="card">
             <div class="card-body">
                 <h2 class="card-title">
-                    <a href="/my_lesson/{{ item.id }}" class="btn btn-secondary">{{ item.name }}</a>
+                    <a href="/course/{{ item.id }}" class="btn btn-secondary">{{ item.name }}</a>
                 </h2>
             </div>
         </div>

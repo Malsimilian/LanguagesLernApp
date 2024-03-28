@@ -109,6 +109,32 @@ def add_lesson(course_id):
 def profile():
     return render_template('profile.html')
 
+@app.route('/search_courses')
+def search_courses():
+    db_sess = db_session.create_session()
+    courses = db_sess.query(Course)
+    return render_template("search_courses.html", courses=courses)
+
+
+@app.route('/course/<int:id>')
+def course(id):
+    db_sess = db_session.create_session()
+    course = db_sess.query(Course).filter(Course.id == id).first()
+    lessons = db_sess.query(Lesson).filter(Lesson.course_id == id)
+    return render_template("course.html", course=course, lessons=lessons)
+
+
+@app.route('/lesson/<int:id>')
+def lesson(id):
+    db_sess = db_session.create_session()
+    lesson = db_sess.query(Lesson).filter(Lesson.course_id == id).first()
+    return render_template('lesson.html', lesson=lesson)
+
+@app.route('/my_lesson/<int:id>')
+def my_lesson(id):
+    db_sess = db_session.create_session()
+    lesson = db_sess.query(Lesson).filter(Lesson.course_id == id).first()
+    return render_template('my_lesson.html', lesson=lesson)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
