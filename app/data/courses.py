@@ -4,6 +4,15 @@ from flask_login import UserMixin
 from sqlalchemy import orm
 
 
+user_to_favorite_courses_table = sqlalchemy.Table(
+    'user_to_favorite_courses',
+    SqlAlchemyBase.metadata,
+    sqlalchemy.Column('users', sqlalchemy.Integer,
+                      sqlalchemy.ForeignKey('users.id')),
+    sqlalchemy.Column('courses', sqlalchemy.Integer,
+                      sqlalchemy.ForeignKey('courses.id'))
+)
+
 class Course(SqlAlchemyBase, UserMixin):
     __tablename__ = 'courses'
 

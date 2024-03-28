@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="578f2ab7-b109-4551-bd64-0d7883e70b18" name="Changes" comment="все работает">
-      <change afterPath="$PROJECT_DIR$/app/tgbot.py" afterDir="false" />
+    <list default="true" id="578f2ab7-b109-4551-bd64-0d7883e70b18" name="Changes" comment="добавил тг бота&#10;https://t.me/LanguagesLernBotBot&#10;позваляющего читать уроки">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/data/courses.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/courses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/data/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/bs.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/search_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/search_courses.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +69,7 @@
       <recent name="D:\PycharmProjects\app" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.tgbot">
+  <component name="RunManager" selected="Python.app (1)">
     <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LanguagesLernApp" />
       <option name="ENV_FILES" value="" />
@@ -178,9 +182,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.app (1)" />
         <item itemvalue="Python.tgbot" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.app (1)" />
         <item itemvalue="Python.users (1)" />
         <item itemvalue="Python.__init__" />
       </list>
@@ -218,7 +222,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711619333703</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="добавил тг бота&#10;https://t.me/LanguagesLernBotBot&#10;позваляющего читать уроки">
+      <option name="closed" value="true" />
+      <created>1711632962740</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1711632962740</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -236,6 +248,7 @@
     <MESSAGE value="вход регистрация траляля" />
     <MESSAGE value="создание курсво&#10;создание уроков" />
     <MESSAGE value="все работает" />
-    <option name="LAST_COMMIT_MESSAGE" value="все работает" />
+    <MESSAGE value="добавил тг бота&#10;https://t.me/LanguagesLernBotBot&#10;позваляющего читать уроки" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавил тг бота&#10;https://t.me/LanguagesLernBotBot&#10;позваляющего читать уроки" />
   </component>
 </project>

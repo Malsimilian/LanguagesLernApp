@@ -150,6 +150,16 @@ def login():
                                form=form)
     return render_template('login.html', title='Авторизация', form=form)
 
+@app.route('/favorite/<int:course_id>', methods=['GET', 'POST'])
+def add_or_exclude_course_to_favorite(course_id):
+    db_sess = db_session.create_session()
+    course = db_sess.query(Course).filter(Course.id == course_id).first()
+    if course in current_user.favorite_courses:
+        current_user.favorite_courses.remove(course)
+    else:
+        current_user.favorite_courses.append(course)
+    return redirect('/search_courses')
+
 
 @app.route('/logout')
 @login_required

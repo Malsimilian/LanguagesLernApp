@@ -20,6 +20,9 @@ class User(SqlAlchemyBase, UserMixin):
                                      default=datetime.datetime.now)
     is_author = sqlalchemy.Column(sqlalchemy.Boolean)
     courses = orm.relationship('Course', backref='user')
+    favorite_courses = orm.relationship("Course",
+                          secondary="user_to_favorite_courses",
+                          backref="users")
 
     def __str__(self):
         return f'{self.id} {self.name} {self.email}'
