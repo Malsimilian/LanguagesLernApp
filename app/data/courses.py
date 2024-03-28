@@ -21,5 +21,6 @@ class Course(SqlAlchemyBase, UserMixin):
     name = sqlalchemy.Column(sqlalchemy.String, unique=True)
     language = sqlalchemy.Column(sqlalchemy.String)
     author_id = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey("users.id"))
+    difficulty = sqlalchemy.Column(sqlalchemy.String)
     lessons = orm.relationship('Lesson', backref='course_lessons')
     author = orm.relationship('User', backref='author_courses')

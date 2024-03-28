@@ -4,8 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="578f2ab7-b109-4551-bd64-0d7883e70b18" name="Changes" comment="добавлена авторизация в тг боте">
-      <change beforePath="$PROJECT_DIR$/app/tgbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/tgbot.py" afterDir="false" />
+    <list default="true" id="578f2ab7-b109-4551-bd64-0d7883e70b18" name="Changes" comment="починил добавление в избранное( изменения не комителись)&#10;добавил в тг бот чтение избраного">
+      <change afterPath="$PROJECT_DIR$/app/forms/search.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/search_result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/data/courses.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/courses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/bs.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/forms/course.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms/course.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/forms/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/create_course.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/create_course.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/search_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/search_courses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,8 +190,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.app (1)" />
-        <item itemvalue="Python.tgbot" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.tgbot" />
         <item itemvalue="Python.users (1)" />
         <item itemvalue="Python.__init__" />
       </list>
@@ -251,7 +261,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711643288529</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="починил добавление в избранное( изменения не комителись)&#10;добавил в тг бот чтение избраного">
+      <option name="closed" value="true" />
+      <created>1711643967105</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1711643967105</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -273,6 +291,7 @@
     <MESSAGE value="добавление курсов в избранное" />
     <MESSAGE value="добавил страницу с избранными курсами" />
     <MESSAGE value="добавлена авторизация в тг боте" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлена авторизация в тг боте" />
+    <MESSAGE value="починил добавление в избранное( изменения не комителись)&#10;добавил в тг бот чтение избраного" />
+    <option name="LAST_COMMIT_MESSAGE" value="починил добавление в избранное( изменения не комителись)&#10;добавил в тг бот чтение избраного" />
   </component>
 </project>

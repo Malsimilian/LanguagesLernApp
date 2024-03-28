@@ -1,6 +1,8 @@
 from flask import Flask, render_template, redirect
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 
+from sqlalchemy import and_, or_
+
 from data import db_session
 from data.users import User
 from data.lessons import Lesson
@@ -9,6 +11,7 @@ from forms.login import LoginForm
 from forms.user import RegisterForm
 from forms.course import CourseForm
 from forms.lesson import LessonForm
+from forms.search import SearchForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret_key'
@@ -58,6 +61,7 @@ def create_course():
         course = Course(
             name=form.name.data,
             language=form.language.data,
+            difficulty=form.difficulty.data,
             author_id=current_user.id
         )
         db_sess.add(course)
@@ -109,11 +113,31 @@ def add_lesson(course_id):
 def profile():
     return render_template('profile.html')
 
-@app.route('/search_courses')
+@app.route('/search_courses', methods=['GET', 'POST'])
 def search_courses():
-    db_sess = db_session.create_session()
-    courses = db_sess.query(Course)
-    return render_template("search_courses.html", courses=courses)
+    form = SearchForm()
+    if form.validate_on_submit():
+        name = form.name.data
+        language = form.language.data
+        difficulty = form.difficulty.data
+        db_sess = db_session.create_session()
+        if difficulty == '' and language == '':
+            courses = db_sess.query(Course).all()
+        elif difficulty == '':
+            courses = db_sess.query(Course).filter(Course.language == language).all()
+        elif language == '':
+            courses = db_sess.query(Course).filter(Course.difficulty == difficulty).all()
+        else:
+            courses = db_sess.query(Course).filter(and_(Course.difficulty == difficulty,
+                                                        Course.language == language)).all()
+        dels = []
+        for course in courses:
+            if name not in course.name:
+                dels.append(course)
+        for d in dels:
+            courses.remove(d)
+        return render_template('search_result.html', courses=courses)
+    return render_template("search_courses.html", form=form)
 
 
 @app.route('/course/<int:id>')
