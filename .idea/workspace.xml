@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="578f2ab7-b109-4551-bd64-0d7883e70b18" name="Changes" comment="починил добавление в избранное( изменения не комителись)&#10;добавил в тг бот чтение избраного">
-      <change afterPath="$PROJECT_DIR$/app/forms/search.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/search_result.html" afterDir="false" />
+    <list default="true" id="578f2ab7-b109-4551-bd64-0d7883e70b18" name="Changes" comment="появился поиск курсов&#10;Not a valid choice.&#10;означает что все норм">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/data/courses.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/courses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/bs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/forms/course.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms/course.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/forms/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/create_course.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/create_course.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/search_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/search_courses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/bs.db" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/bs.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/my_course.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/my_course.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/my_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/my_courses.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,7 +263,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711643967105</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="появился поиск курсов&#10;Not a valid choice.&#10;означает что все норм">
+      <option name="closed" value="true" />
+      <created>1711649575630</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1711649575630</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -292,6 +294,7 @@
     <MESSAGE value="добавил страницу с избранными курсами" />
     <MESSAGE value="добавлена авторизация в тг боте" />
     <MESSAGE value="починил добавление в избранное( изменения не комителись)&#10;добавил в тг бот чтение избраного" />
-    <option name="LAST_COMMIT_MESSAGE" value="починил добавление в избранное( изменения не комителись)&#10;добавил в тг бот чтение избраного" />
+    <MESSAGE value="появился поиск курсов&#10;Not a valid choice.&#10;означает что все норм" />
+    <option name="LAST_COMMIT_MESSAGE" value="появился поиск курсов&#10;Not a valid choice.&#10;означает что все норм" />
   </component>
 </project>

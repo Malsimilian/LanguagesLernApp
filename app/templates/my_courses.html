@@ -7,9 +7,12 @@
     <div class="col-md-6 mb-3">
         <div class="card">
             <div class="card-body">
-                <h2 class="card-title">
-                    <a href="/my_course/{{ item.id }}" class="btn btn-secondary">{{ item.name }}</a>
-                </h2>
+<!--                <h2 class="card-title">-->
+                <a href="/my_course/{{ item.id }}" class="btn btn-secondary">{{ item.name }}</a>
+<!--                </h2>-->
+
+<!--                <a href="/delete_course/{{ item.id }}" class="btn btn-danger">Изменить</a>-->
+                <a href="/delete_course/{{ item.id }}" class="btn btn-danger">Удалить</a>
             </div>
         </div>
     </div>
