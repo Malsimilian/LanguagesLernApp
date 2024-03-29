@@ -15,3 +15,4 @@ class Lesson(SqlAlchemyBase, UserMixin):
     # tests = orm.relationship('Tests', backref='lesson')
     course_id = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey('courses.id'))
     course = orm.relationship('Course', backref='lessons_course')
+    questions = orm.relationship('Question', backref='lessons_questions')

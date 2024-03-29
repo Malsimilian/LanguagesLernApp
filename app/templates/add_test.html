@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1>Добавление вопроса</h1>
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                <label>{{ form.question.label }}</label>
+                {{ form.question(class="form-control") }}
+                {% for error in form.question.errors %}
+                    <p class="alert alert-danger">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label>{{ form.answer1.label }}</label>
+                {{ form.answer1(class="form-control") }}
+                {% for error in form.answer1.errors %}
+                    <p class="alert alert-danger">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label>{{ form.answer2.label }}</label>
+                {{ form.answer2(class="form-control") }}
+                {% for error in form.answer2.errors %}
+                    <p class="alert alert-danger">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label>{{ form.answer3.label }}</label>
+                {{ form.answer3(class="form-control") }}
+                {% for error in form.answer3.errors %}
+                    <p class="alert alert-danger">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label>{{ form.answer4.label }}</label>
+                {{ form.answer4(class="form-control") }}
+                {% for error in form.answer4.errors %}
+                    <p class="alert alert-danger">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <button type="submit" class="btn btn-primary"></button>
+            {{ message }}
+        </form>
+    </div>
+{% endblock %}

@@ -7,14 +7,19 @@ from data import db_session
 from data.users import User
 from data.lessons import Lesson
 from data.courses import Course
+from data.questions import Question
 from forms.login import LoginForm
 from forms.user import RegisterForm
 from forms.course import CourseForm
 from forms.lesson import LessonForm
 from forms.search import SearchForm
+from forms.test import TestForm
+from another_classes.boolconverter import BoolConverter
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret_key'
+app.url_map.converters['bool'] = BoolConverter
 login_manager = LoginManager()
 login_manager.init_app(app)
 
@@ -232,6 +237,32 @@ def delete_lesson(id):
         db_sess.commit()
     db_sess.close()
     return redirect(f'/my_course/{course_id}')
+
+
+@app.route('/add_test/<bool:more>/<int:lesson_id>', methods=['GET', 'POST'])
+def add_test(more, lesson_id):
+    form = TestForm()
+    if form.validate_on_submit():
+        db_sess = db_session.create_session()
+        lesson = db_sess.query(Lesson).filter(Lesson.id == lesson_id).first()
+        course = db_sess.query(Course).filter(Course.id == lesson.course_id).first()
+        user = db_sess.query(User).filter(User.id == course.author_id).first()
+        if current_user == user:
+            question = Question(
+            question=form.question.data,
+            answer1=form.answer1.data,
+            answer2=form.answer2.data,
+            answer3=form.answer3.data,
+            answer4=form.answer4.data,
+            lesson_id=lesson_id
+            )
+            db_sess.add(question)
+            db_sess.commit()
+            db_sess.close()
+        if more:
+            return render_template('add_test.html', form=TestForm())
+        return redirect(f'/my_lesson/{lesson_id}')
+    return render_template('add_test.html', form=form)
 
 
 @app.route('/logout')
