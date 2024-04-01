@@ -5,5 +5,34 @@
 <div>
     {{lesson.video_material}}
     {{lesson.text_material}}
+    {% for item in lesson.questions %}
+    <div class="col-md-6 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <p>{{ item.question }}</p>
+                <div class="card">
+                    <div class="card-body">
+                        <p>{{ item.answer1 }}</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <p>{{ item.answer2 }}</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <p>{{ item.answer3 }}</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <p>{{ item.answer4 }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}

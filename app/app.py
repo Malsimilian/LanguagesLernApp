@@ -165,6 +165,7 @@ def lesson(id):
 def my_lesson(id):
     db_sess = db_session.create_session()
     lesson = db_sess.query(Lesson).filter(Lesson.id == id).first()
+
     return render_template('my_lesson.html', lesson=lesson)
 
 
@@ -176,9 +177,7 @@ def login():
         user = db_sess.query(User).filter(User.email == form.email.data).first()
         if user and user.check_password(form.password.data):
             login_user(user, remember=form.remember_me.data)
-            db_sess.close()
             return redirect("/")
-        db_sess.close()
         return render_template('login.html',
                                message="Неправильный логин или пароль",
                                form=form)
@@ -195,7 +194,6 @@ def add_or_exclude_course_to_favorite(url, course_id):
     else:
         current_user.favorite_courses.append(course)
     db_sess.commit()
-    db_sess.close()
     return redirect(f'/{url}')
 
 
@@ -204,7 +202,6 @@ def add_or_exclude_course_to_favorite(url, course_id):
 def favorite_courses():
     db_sess = db_session.create_session()
     courses = db_sess.query(Course)
-    db_sess.close()
     return render_template("favorite_courses.html", courses=courses)
 
 
@@ -220,7 +217,6 @@ def delete_course(id):
             db_sess.delete(lesson)
         db_sess.delete(course)
         db_sess.commit()
-    db_sess.close()
     return redirect('/my_courses')
 
 
@@ -235,16 +231,15 @@ def delete_lesson(id):
     if current_user == user:
         db_sess.delete(lesson)
         db_sess.commit()
-    db_sess.close()
     return redirect(f'/my_course/{course_id}')
 
 
-@app.route('/add_test/<bool:more>/<int:lesson_id>', methods=['GET', 'POST'])
-def add_test(more, lesson_id):
+@app.route('/add_test/<int:lesson_id>', methods=['GET', 'POST'])
+def add_test(lesson_id):
     form = TestForm()
+    db_sess = db_session.create_session()
+    lesson = db_sess.query(Lesson).filter(Lesson.id == lesson_id).first()
     if form.validate_on_submit():
-        db_sess = db_session.create_session()
-        lesson = db_sess.query(Lesson).filter(Lesson.id == lesson_id).first()
         course = db_sess.query(Course).filter(Course.id == lesson.course_id).first()
         user = db_sess.query(User).filter(User.id == course.author_id).first()
         if current_user == user:
@@ -258,11 +253,14 @@ def add_test(more, lesson_id):
             )
             db_sess.add(question)
             db_sess.commit()
-            db_sess.close()
-        if more:
-            return render_template('add_test.html', form=TestForm())
-        return redirect(f'/my_lesson/{lesson_id}')
-    return render_template('add_test.html', form=form)
+            return render_template('add_test.html', form=form, lesson=lesson)
+    return render_template('add_test.html', form=form, lesson=lesson)
+
+
+@app.route('/take_test/<int:lesson_id>')
+def take_test(lesson_id):
+    pass
+
 
 
 @app.route('/logout')

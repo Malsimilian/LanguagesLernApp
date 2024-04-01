@@ -11,10 +11,13 @@
         <div class="card">
             <div class="card-body">
 <!--                <h2 class="card-title">-->
-                <a href="/my_lesson/{{ item.id }}" class="btn btn-secondary">{{ item.name }}</a>
+                <a href="/my_lesson/{{ item.id }}" class="btn btn-primary">{{ item.name }}</a>
 <!--                </h2>-->
 
                 <a href="/delete_lesson/{{ item.id }}" class="btn btn-danger">Удалить</a>
+                {% if not item.questions %}
+                    <a href="/add_test/{{ item.id }}" class="btn btn-secondary">Добавить тест</a>
+                {% endif %}
             </div>
         </div>
     </div>

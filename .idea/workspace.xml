@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="578f2ab7-b109-4551-bd64-0d7883e70b18" name="Changes" comment="добавил удаление уроков и курсов">
-      <change afterPath="$PROJECT_DIR$/app/another_classes/boolconverter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/forms/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/add_test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/forms/answer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/take_test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/data/__all_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/__all_models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/data/lessons.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/lessons.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/data/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/questions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/data/tests.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/db/bs.db" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/bs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/add_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/add_test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/my_course.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/my_course.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/my_lesson.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/my_lesson.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
