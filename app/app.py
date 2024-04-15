@@ -13,7 +13,8 @@ from forms.user import RegisterForm
 from forms.course import CourseForm
 from forms.lesson import LessonForm
 from forms.search import SearchForm
-from forms.test import TestForm
+from forms.test import QuestionForm
+from forms.answer import TestForm
 from another_classes.boolconverter import BoolConverter
 
 
@@ -157,7 +158,8 @@ def course(id):
 def lesson(id):
     db_sess = db_session.create_session()
     lesson = db_sess.query(Lesson).filter(Lesson.id == id).first()
-    return render_template('lesson.html', lesson=lesson)
+    question = lesson.questions[0]
+    return render_template('lesson.html', lesson=lesson, question=question)
 
 
 @login_required
@@ -236,7 +238,7 @@ def delete_lesson(id):
 
 @app.route('/add_test/<int:lesson_id>', methods=['GET', 'POST'])
 def add_test(lesson_id):
-    form = TestForm()
+    form = QuestionForm()
     db_sess = db_session.create_session()
     lesson = db_sess.query(Lesson).filter(Lesson.id == lesson_id).first()
     if form.validate_on_submit():
@@ -249,7 +251,8 @@ def add_test(lesson_id):
             answer2=form.answer2.data,
             answer3=form.answer3.data,
             answer4=form.answer4.data,
-            lesson_id=lesson_id
+            lesson_id=lesson_id,
+            correct_answer=form.correct_answer.data
             )
             db_sess.add(question)
             db_sess.commit()
@@ -257,10 +260,26 @@ def add_test(lesson_id):
     return render_template('add_test.html', form=form, lesson=lesson)
 
 
-@app.route('/take_test/<int:lesson_id>')
-def take_test(lesson_id):
-    pass
-
+@app.route('/take_test/<int:question_id>/<int:lesson_id>/<int:result1>/<int:result2>', methods=['GET', 'POST'])
+def take_test(question_id, lesson_id, result1, result2):
+    db_sess = db_session.create_session()
+    question = db_sess.query(Question).filter(Question.id == question_id).first()
+    if not question:
+        return render_template('test_result.html', result1=result1, result2=result2)
+    lesson = question.lesson
+    if lesson.id != lesson_id:
+        return render_template('test_result.html', result1=result1, result2=result2)
+    form = TestForm()
+    if not form.validate_on_submit():
+        print(1)
+        return render_template('take_test.html', form=TestForm(), lesson_id=lesson_id, result1=result1, result2=result2)
+    print(form.data)
+    if question.correct_answer == form.answer.data:
+        result1 += 1
+    result2 += 1
+    question_id += 1
+    print(4)
+    return redirect(f'/take_test/{question_id}/{lesson_id}/{result1}/{result2}')
 
 
 @app.route('/logout')

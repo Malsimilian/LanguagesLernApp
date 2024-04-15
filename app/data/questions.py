@@ -12,5 +12,6 @@ class Question(SqlAlchemyBase, SerializerMixin):
     answer2 = sqlalchemy.Column(sqlalchemy.String)
     answer3 = sqlalchemy.Column(sqlalchemy.String)
     answer4 = sqlalchemy.Column(sqlalchemy.String)
+    correct_answer = sqlalchemy.Column(sqlalchemy.String)
     lesson_id = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey('lessons.id'))
     lesson = orm.relationship('Lesson', backref='questions_lesson')
